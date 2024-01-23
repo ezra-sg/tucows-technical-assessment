@@ -10,16 +10,18 @@ const { data } = await useFetch<{ products: Product[] }>('/api/products');
 const searchModel = ref('');
 
 // computed
-const filteredProducts = computed(() => {
-    return (data?.value?.products ?? []).filter(({ product }) => {
-        return product.toLowerCase().includes(searchModel.value.toLowerCase());
-    });
-});
+const filteredProducts = computed(() =>
+    (data?.value?.products ?? []).filter(({ product }) =>
+        product.toLowerCase().includes(searchModel.value.toLowerCase())
+    )
+);
 </script>
 
 <template>
 <AppNav @search="$event => searchModel = $event" />
 
-{{ filteredProducts.length }}
+<div class="mx-6 mt-2 mb-8">
+    <ProductTable :products="filteredProducts" />
+</div>
 
 </template>

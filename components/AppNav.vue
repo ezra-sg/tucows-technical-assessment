@@ -42,8 +42,8 @@ onBeforeUnmount(() => {
 <template>
 <header
     :class="{
-        'flex gap-6 sticky top-0': true,
-        'px-6 py-8 flex-col': isMobile,
+        'flex gap-6 sticky top-0 bg-white': true,
+        'px-6 pt-8 pb-2 flex-col': isMobile,
         'justify-between p-14': !isMobile
     }"
 >
