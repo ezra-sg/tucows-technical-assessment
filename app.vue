@@ -18,9 +18,8 @@ const filteredProducts = computed(() => {
 </script>
 
 <template>
-<AppNav />
-<div>
-    <br>
+<AppNav @search="$event => searchModel = $event" />
 
-</div>
+{{ filteredProducts.length }}
+
 </template>

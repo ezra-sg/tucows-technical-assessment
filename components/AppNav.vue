@@ -10,6 +10,13 @@ const searchModel = ref('');
 const showMobileMenu = ref(false);
 const isMobile = ref(true);
 
+// watchers
+watch(searchModel, () => {
+    if (searchModel.value === '') {
+        emit('search', '');
+    }
+});
+
 // methods
 const resizeHandler = debounce(() => {
     isMobile.value = window.innerWidth <= MOBILE_BREAKPOINT;
@@ -69,6 +76,7 @@ onBeforeUnmount(() => {
                     type="text"
                     class="border-slate-300 border-[1px] rounded-r-md h-12 w-full pl-12"
                     placeholder="Search"
+                    @keydown.enter="handleSearch"
                 />
                 <NuxtImg
                     src="/icon--search.svg"
