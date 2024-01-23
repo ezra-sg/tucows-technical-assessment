@@ -18,14 +18,10 @@ const filteredProducts = computed(() => {
 </script>
 
 <template>
+<AppNav />
 <div>
     <input type="text" v-model="searchModel" />
     <br>
 
-    <CatalogProductCard
-        v-for="product in filteredProducts"
-        :key="product.id"
-        :product="product"
-    />
 </div>
 </template>
