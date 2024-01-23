@@ -20,7 +20,6 @@ const filteredProducts = computed(() => {
 <template>
 <AppNav />
 <div>
-    <input type="text" v-model="searchModel" />
     <br>
 
 </div>
