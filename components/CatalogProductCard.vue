@@ -1,12 +1,8 @@
 <script setup lang="ts">
+import type { Product } from '../types/product';
+
 const props = defineProps<{
-    product: {
-        product: string;
-        serial:string;
-        id: number;
-        quantity: string;
-        total: number;
-    };
+    product: Product;
 }>();
 </script>
 
