@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
                 <input
                     v-model="searchModel"
                     type="text"
-                    class="border-slate-300 border-[1px] rounded-r-sm h-12 w-full pl-12"
+                    class="border-slate-300 border-[1px] rounded-r-md h-12 w-full pl-12"
                     placeholder="Search"
                 />
                 <NuxtImg
