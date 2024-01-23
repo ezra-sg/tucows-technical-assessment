@@ -7,8 +7,13 @@ const props = defineProps<{
 </script>
 
 <template>
-{{ product.product }}<br>
+<span class="test">
+    {{ product.product }}<br>
+</span>
 </template>
 
 <style lang="scss">
+.test {
+    color: var(--accent);
+}
 </style>

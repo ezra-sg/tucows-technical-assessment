@@ -7,6 +7,8 @@ export default defineEventHandler((event) => {
                 id: 1374,
                 quantity: 122,
                 total: 854.08,
+                status: '',
+                imageUrl: '',
             },
             {
                 product: "Gaming Chair, local pickup only",
@@ -14,6 +16,8 @@ export default defineEventHandler((event) => {
                 id: 3933,
                 quantity: 245,
                 total: 943.65,
+                status: '',
+                imageUrl: '',
             },
             {
                 product: "Macbook Air 13 inch(2020 ) For Sale",
@@ -21,6 +25,8 @@ export default defineEventHandler((event) => {
                 id: 9374,
                 quantity: 134,
                 total: 779.58,
+                status: '',
+                imageUrl: '',
             },
             {
                 product: "Heimer Miller Sofa (Mint Condition)",
@@ -28,6 +34,8 @@ export default defineEventHandler((event) => {
                 id: 5560,
                 quantity: 26,
                 total: 275.43,
+                status: '',
+                imageUrl: '',
             },
             {
                 product: "iPad Pro 2017 Model",
@@ -35,6 +43,8 @@ export default defineEventHandler((event) => {
                 id: 6065,
                 quantity: 76,
                 total: 475.22,
+                status: '',
+                imageUrl: '',
             },
             {
                 product: "Gopro hero 7 (with receipt)",
@@ -42,6 +52,8 @@ export default defineEventHandler((event) => {
                 id: 4349,
                 quantity: 47,
                 total: 219.78,
+                status: '',
+                imageUrl: '',
             },
             {
                 product: "Dell Computer Monitor",
@@ -49,6 +61,8 @@ export default defineEventHandler((event) => {
                 id: 9359,
                 quantity: 54,
                 total: 105.55,
+                status: '',
+                imageUrl: '',
             },
             {
                 product: "AirPods Pro",
@@ -56,6 +70,8 @@ export default defineEventHandler((event) => {
                 id: 8829,
                 quantity: 132,
                 total: 928.41,
+                status: '',
+                imageUrl: '',
             },
             {
                 product: "Playstation 4 Limited Edition",
@@ -63,6 +79,8 @@ export default defineEventHandler((event) => {
                 id: 5045,
                 quantity: 15,
                 total: 473.85,
+                status: '',
+                imageUrl: '',
             },
             {
                 product: "DJI Mavic Pro 2",
@@ -70,6 +88,8 @@ export default defineEventHandler((event) => {
                 id: 3536,
                 quantity: 39,
                 total: 576.28,
+                status: '',
+                imageUrl: '',
             },
         ],
     };
