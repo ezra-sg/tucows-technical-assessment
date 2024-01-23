@@ -7,6 +7,8 @@ const props = defineProps<{
 
 // data
 const sortOrder = ref<'asc' | 'desc'>('desc');
+const dialogRef = ref<HTMLDialogElement | null>(null);
+const modalProduct = ref<Product | null>(null);
 
 // computed
 const sortedProducts = computed(() => {
@@ -20,6 +22,16 @@ const sortedProducts = computed(() => {
 // methods
 function invertSort() {
     sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc';
+}
+
+function openModal(product: Product) {
+    modalProduct.value = product;
+    dialogRef.value?.showModal();
+}
+
+function closeModal() {
+    modalProduct.value = null;
+    dialogRef.value?.close();
 }
 
 </script>
@@ -68,7 +80,6 @@ function invertSort() {
                             :class="sortOrder === 'asc' ? 'rotate-180' : ''"
                         />
                     </div>
-
                 </th>
             </tr>
         </thead>
@@ -77,6 +88,13 @@ function invertSort() {
             <tr
                 v-for="product in sortedProducts"
                 :key="product.id"
+                class="cursor-pointer"
+                tabindex="0"
+                role="button"
+                aria-haspopup="dialog"
+                aria-label="View product image"
+                @click="openModal(product)"
+                @keydown.enter="openModal(product)"
             >
                 <td class="hidden lg:table-cell px-4 py-2 border-t-[0.5px] border-b-[0.5px] border-slate-300">
                     {{ product.id }}
@@ -98,6 +116,52 @@ function invertSort() {
             </tr>
         </tbody>
     </table>
+
+    <dialog ref="dialogRef">
+        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div class="bg-white pt-4 pb-8 rounded-md">
+                <div class="flex justify-between items-center gap-12 mb-8">
+                    <span class="font-bold pl-8">
+                        {{ modalProduct?.product }}
+                    </span>
+
+                    <div
+                        role="button"
+                        tabindex="0"
+                        aria-label="Close modal"
+                        class="flex justify-center items-center w-12 h-12 mr-4"
+                        @click="closeModal"
+                        @keydown.enter="closeModal"
+                    >
+                        <NuxtImg
+                            src="/icon--x.svg"
+                            alt="Close icon"
+                            height="12"
+                            width="12"
+                        />
+                    </div>
+
+                </div>
+
+                <NuxtImg
+                    v-if="modalProduct"
+                    :src="modalProduct?.imageUrl"
+                    :alt="`${modalProduct?.product} image`"
+                    class="max-h-[300px] w-full object-contain mb-12 px-8"
+                />
+
+                <div class="flex justify-end pr-8">
+                    <button
+                        class="text-sm bg-gray-100 hover:bg-indigo-500 hover:text-white text-black py-2 px-4 rounded-md"
+                        @click="closeModal"
+                    >
+                        Close
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </dialog>
 </div>
 
 </template>
