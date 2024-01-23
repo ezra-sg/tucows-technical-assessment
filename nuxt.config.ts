@@ -5,15 +5,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
   css: ["~/assets/styles/main.css"],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@use "~/assets/styles/global.scss" as *;',
-        },
-      },
-    },
-  },
   postcss: {
     plugins: {
       tailwindcss: {},
