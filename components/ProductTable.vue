@@ -12,6 +12,7 @@ const dialogRef = ref<HTMLDialogElement | null>(null);
 const modalProduct = ref<Product | null>(null);
 
 // computed
+// note: this is a computed property that sorts the products based on the user's sort order
 const sortedProducts = computed(() => {
     const products = [...props.products].sort((a, b) => {
         return sortOrder.value === 'asc' ? a.total - b.total : b.total - a.total;
@@ -35,12 +36,12 @@ function closeModal() {
     dialogRef.value?.close();
 }
 
+// note: this method closes the modal when the user clicks outside of it
 function handleModalScrimClick(event: MouseEvent) {
     if (event.target === event.currentTarget) {
         closeModal();
     }
 }
-
 </script>
 
 <template>
@@ -52,6 +53,7 @@ function handleModalScrimClick(event: MouseEvent) {
         </span>
     </div>
 
+    <!-- Note: this table uses CSS only to determine which layout (mobile or desktop) to use -->
     <table class="w-full border-separate border-spacing-0 border-slate-300 border-[1px] rounded-md">
         <thead>
             <tr>
@@ -147,7 +149,6 @@ function handleModalScrimClick(event: MouseEvent) {
                             width="12"
                         />
                     </div>
-
                 </div>
 
                 <NuxtImg
