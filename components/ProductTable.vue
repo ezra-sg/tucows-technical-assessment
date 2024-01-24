@@ -165,12 +165,10 @@ function handleModalScrimClick(event: MouseEvent) {
                         Close
                     </button>
                 </div>
-
             </div>
         </div>
     </dialog>
 </div>
-
 </template>
 
 <style lang="scss">

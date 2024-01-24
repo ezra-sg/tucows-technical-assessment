@@ -135,6 +135,7 @@ onBeforeUnmount(() => {
                     />
                     <span v-if="isMobile">Settings</span>
                 </li>
+
                 <li class="flex gap-2 items-center">
                     <div class="relative">
                         <NuxtImg
@@ -146,6 +147,7 @@ onBeforeUnmount(() => {
                     </div>
                     <span v-if="isMobile">Notifications</span>
                 </li>
+
                 <li class="flex gap-2 items-center">
                     <NuxtImg
                         src="/icon--account.svg"
@@ -155,11 +157,8 @@ onBeforeUnmount(() => {
                     {{ USERNAME}}
                 </li>
             </ul>
-
         </div>
     </div>
-
-
 </header>
 </template>
 
