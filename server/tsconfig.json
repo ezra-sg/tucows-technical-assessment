@@ -1,3 +1,6 @@
 {
+  "exclude": [
+    "/home/ezra/src/tucows-technical-assessment/tailwind.config.js"
+  ],
   "extends": "../.nuxt/tsconfig.server.json"
 }
