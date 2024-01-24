@@ -10,6 +10,14 @@ const searchModel = ref('');
 const showMobileMenu = ref(false);
 const isMobile = ref(true);
 
+// computed
+const inputHasIllegalChars = computed(() => /[^a-zA-Z0-9]/.test(searchModel.value));
+const inputClasses = computed(() => {
+    const baseClasses = 'border-slate-300 border-[1px] rounded-r-md h-12 w-full pl-12 focus:outline-indigo-500';
+
+    return inputHasIllegalChars.value ? `${baseClasses} outline outline-2 outline-red-700 focus:outline-red-500` : baseClasses;
+});
+
 // watchers
 watch(searchModel, () => {
     if (searchModel.value === '') {
@@ -25,6 +33,10 @@ const resizeHandler = debounce(() => {
 }, 100);
 
 function handleSearch() {
+    if (inputHasIllegalChars.value || searchModel.value === '') {
+        return;
+    }
+
     emit('search', searchModel.value);
 }
 
@@ -69,12 +81,12 @@ onBeforeUnmount(() => {
     </div>
 
     <div :class="isMobile ? '' : 'flex gap-10 xl:w-[65%] justify-end'">
-        <div class="flex justify-between gap-5 flex-grow xl:max-w-[600px]">
+        <div class="relative flex justify-between gap-5 flex-grow xl:max-w-[600px]">
             <div class="relative flex-grow">
                 <input
                     v-model="searchModel"
                     type="text"
-                    class="border-slate-300 border-[1px] rounded-r-md h-12 w-full pl-12"
+                    :class="inputClasses"
                     placeholder="Search"
                     @keydown.enter="handleSearch"
                 />
@@ -89,11 +101,16 @@ onBeforeUnmount(() => {
             </div>
 
             <button
-                class="bg-indigo-500 rounded-md text-md text-white px-8"
+                class="bg-indigo-500 disabled:opacity-75 disabled:cursor-not-allowed rounded-md text-md text-white px-8"
+                :disabled="inputHasIllegalChars || searchModel === ''"
                 @click="handleSearch"
             >
                 Search
             </button>
+
+            <div v-if="inputHasIllegalChars" class="c-app-nav__input-error">
+                Only letters and numbers are allowed
+            </div>
         </div>
 
         <div
@@ -147,4 +164,21 @@ onBeforeUnmount(() => {
 </template>
 
 <style lang="scss">
+.c-app-nav {
+    &__input-error {
+        @apply text-indigo-700 absolute -bottom-14 bg-indigo-50 shadow-md p-2;
+
+        &::before {
+            @apply shadow-md absolute bg-indigo-50;
+
+            content: '';
+            top: -6px;
+            left: 48px;
+            height: 16px;
+            width: 16px;
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+    }
+}
 </style>
