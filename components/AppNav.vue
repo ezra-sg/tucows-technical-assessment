@@ -127,7 +127,7 @@ onBeforeUnmount(() => {
                     'gap-10': !isMobile
                 }"
             >
-                <li class="flex gap-2 items-center">
+                <li class="flex gap-2 items-center cursor-pointer">
                     <NuxtImg
                         src="/icon--gear.svg"
                         height="24"
@@ -136,7 +136,7 @@ onBeforeUnmount(() => {
                     <span v-if="isMobile">Settings</span>
                 </li>
 
-                <li class="flex gap-2 items-center">
+                <li class="flex gap-2 items-center cursor-pointer">
                     <div class="relative">
                         <NuxtImg
                             src="/icon--notification-bell.svg"
@@ -148,7 +148,7 @@ onBeforeUnmount(() => {
                     <span v-if="isMobile">Notifications</span>
                 </li>
 
-                <li class="flex gap-2 items-center">
+                <li class="flex gap-2 items-center cursor-pointer">
                     <NuxtImg
                         src="/icon--account.svg"
                         height="24"
