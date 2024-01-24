@@ -3,6 +3,7 @@ import type { Product } from '~/types/product';
 
 const props = defineProps<{
     products: Product[];
+    totalProducts: number;
 }>();
 
 // data
@@ -41,7 +42,7 @@ function closeModal() {
     <div class="flex gap-2 items-center mb-4">
         <h3 class="font-bold text-lg">Products</h3>
         <span class="text-gray-500 text-sm">
-            {{ products.length }} of 64 results
+            {{ products.length }} of {{ totalProducts }} results
         </span>
     </div>
 

@@ -21,7 +21,7 @@ const filteredProducts = computed(() =>
 <AppNav @search="$event => searchModel = $event" />
 
 <div class="mx-6 mt-2 mb-8">
-    <ProductTable :products="filteredProducts" />
+    <ProductTable :products="filteredProducts" :total-products="(data?.products ?? []).length" />
 </div>
 
 </template>
