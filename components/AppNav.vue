@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import debounce from 'debounce';
+import throttle from 'just-throttle';
 
 const emit = defineEmits(['search']);
 const MOBILE_BREAKPOINT = 1024;
@@ -7,6 +8,7 @@ const USERNAME = 'Adriana Arias';
 
 // data
 const searchModel = ref('');
+const showNavShadow = ref(false);
 const showMobileMenu = ref(false);
 const isMobile = ref(true);
 
@@ -32,6 +34,10 @@ const resizeHandler = debounce(() => {
     showMobileMenu.value = false;
 }, 100);
 
+const scrollHandler = throttle(() => {
+    showNavShadow.value = Math.floor(window.scrollY) > 20;
+}, 50, { leading: true, trailing: true });
+
 function handleSearch() {
     if (inputHasIllegalChars.value || searchModel.value === '') {
         return;
@@ -41,11 +47,13 @@ function handleSearch() {
 }
 
 onMounted(() => {
+    window.addEventListener('scroll', scrollHandler);
     window.addEventListener('resize', resizeHandler);
     resizeHandler();
 });
 
 onBeforeUnmount(() => {
+    window.removeEventListener('scroll', scrollHandler);
     window.removeEventListener('resize', resizeHandler);
 });
 
@@ -56,7 +64,8 @@ onBeforeUnmount(() => {
     :class="{
         'flex gap-6 sticky top-0 bg-white': true,
         'px-6 pt-8 pb-2 flex-col': isMobile,
-        'justify-between p-14': !isMobile
+        'justify-between px-14 pt-14 pb-7 mb-7': !isMobile,
+        'shadow-md': showNavShadow
     }"
 >
     <div class="flex justify-between">
