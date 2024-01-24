@@ -36,5 +36,3 @@ yarn dev
 # bun
 bun run dev
 ```
-
-and access the application at `http://localhost:3000`.
