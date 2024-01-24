@@ -35,6 +35,12 @@ function closeModal() {
     dialogRef.value?.close();
 }
 
+function handleModalScrimClick(event: MouseEvent) {
+    if (event.target === event.currentTarget) {
+        closeModal();
+    }
+}
+
 </script>
 
 <template>
@@ -119,7 +125,7 @@ function closeModal() {
     </table>
 
     <dialog ref="dialogRef">
-        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" @click="handleModalScrimClick">
             <div class="bg-white pt-4 pb-8 rounded-md">
                 <div class="flex justify-between items-center gap-12 mb-8">
                     <span class="font-bold pl-8">
