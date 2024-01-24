@@ -154,7 +154,7 @@ function handleModalScrimClick(event: MouseEvent) {
                     v-if="modalProduct"
                     :src="modalProduct?.imageUrl"
                     :alt="`${modalProduct?.product} image`"
-                    class="max-h-[300px] w-full object-contain mb-12 px-8"
+                    class="max-h-[50vh] w-full object-contain mb-12 px-8"
                 />
 
                 <div class="flex justify-end pr-8">
