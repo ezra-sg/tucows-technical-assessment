@@ -84,7 +84,7 @@ function handleModalScrimClick(event: MouseEvent) {
 
                 <div class="flex justify-end pr-8">
                     <button
-                        class="rounded-md bg-gray-100 px-4 py-2 text-sm text-black hover:bg-indigo-500 hover:text-white"
+                        class="bg-gray-100 rounded-md px-4 py-2 text-sm text-black hover:bg-stormPurple hover:text-white"
                         @click="closeModal"
                     >
                         Close

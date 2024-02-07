@@ -10,9 +10,9 @@ const inputHasIllegalChars = computed(() =>
 );
 const inputClasses = computed(() => {
     const baseClasses =
-        'border-slate-300 border-[1px] rounded-r-md h-12 w-full pl-12 focus:outline-indigo-500';
+        'border-stormInputGray border-[1px] rounded-r-md h-12 w-full pl-12 focus:outline-stormPurple';
     const errorClasses =
-        'outline outline-2 outline-red-700 focus:outline-red-500';
+        'outline outline-2 outline-stormLightRed focus:stormRed';
 
     return inputHasIllegalChars.value
         ? `${baseClasses} ${errorClasses}`
@@ -64,7 +64,7 @@ function handleSearch() {
         </div>
 
         <button
-            class="text-md rounded-md bg-indigo-500 px-8 text-white disabled:cursor-not-allowed disabled:opacity-75"
+            class="text-md rounded-md bg-stormPurple px-8 text-white disabled:cursor-not-allowed"
             :disabled="disableSearchButton"
             @click="handleSearch"
         >
@@ -76,10 +76,10 @@ function handleSearch() {
 <style lang="scss">
 .c-nav-search {
     &__input-error {
-        @apply absolute -bottom-14 bg-indigo-50 p-2 text-indigo-700 shadow-md;
+        @apply absolute -bottom-14 bg-stormLightPurple p-2 text-stormPurple shadow-md;
 
         &::before {
-            @apply absolute bg-indigo-50 shadow-md;
+            @apply absolute bg-stormLightPurple shadow-md;
 
             content: '';
             top: -6px;

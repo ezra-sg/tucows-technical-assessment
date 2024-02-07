@@ -49,13 +49,13 @@ function handleModalClosed() {
     <div class="m-auto w-full max-w-[1000px] px-6 pb-8 pt-2">
         <div class="mb-4 flex items-center gap-2">
             <h3 class="text-lg font-bold">Products</h3>
-            <span class="text-sm text-gray-500">
+            <span class="text-sm text-stormTextGray">
                 {{ filteredProducts.length }} of {{ products.length }} results
             </span>
         </div>
 
         <table
-            class="w-full border-separate border-spacing-0 rounded-md border-[1px] border-slate-300"
+            class="w-full border-separate border-spacing-0 rounded-md border-[1px] border-stormTableGray"
         >
             <ProductTableHeader
                 :sort-order="sortOrder"

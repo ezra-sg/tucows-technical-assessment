@@ -17,12 +17,26 @@ function invertSort() {
 <template>
     <thead>
         <tr>
-            <th class="hidden p-4 text-left lg:table-cell">ID</th>
-            <th class="hidden p-4 lg:table-cell">Status</th>
-            <th class="hidden p-4 lg:table-cell">Quantity</th>
-            <th class="p-4">Product Name</th>
             <th
-                class="hidden border-l-[2px] border-slate-300 p-4 pl-8 lg:table-cell"
+                class="hidden border-b-[1px] border-stormTableGray p-4 text-left lg:table-cell"
+            >
+                ID
+            </th>
+            <th
+                class="hidden border-b-[1px] border-stormTableGray p-4 lg:table-cell"
+            >
+                Status
+            </th>
+            <th
+                class="hidden border-b-[1px] border-stormTableGray p-4 lg:table-cell"
+            >
+                Quantity
+            </th>
+            <th class="border-b-[1px] border-stormTableGray p-4">
+                Product Name
+            </th>
+            <th
+                class="hidden border-b-[1px] border-l-[2px] border-stormTableGray p-4 pl-8 lg:table-cell"
             >
                 <div
                     class="flex cursor-pointer items-center justify-between gap-2"

@@ -36,7 +36,7 @@ function handleSearch(searchTerm: string) {
                     height="48"
                     width="48"
                 />
-                <span class="text-5xl">STORM</span>
+                <span class="text-4xl">STORM</span>
             </div>
 
             <NuxtImg
@@ -60,7 +60,7 @@ function handleSearch(searchTerm: string) {
                 }"
             >
                 <ul
-                    class="flex flex-col gap-4 text-indigo-500 lg:flex-row lg:gap-10"
+                    class="flex flex-col gap-4 text-stormPurple lg:flex-row lg:gap-10"
                 >
                     <li class="flex cursor-pointer items-center gap-2">
                         <NuxtImg src="/icon--gear.svg" height="24" width="24" />
@@ -75,7 +75,7 @@ function handleSearch(searchTerm: string) {
                                 width="24"
                             />
                             <div
-                                class="absolute right-0.5 top-0.5 h-2 w-2 rounded bg-red-600"
+                                class="bg-red-600 absolute right-0.5 top-0.5 h-2 w-2 rounded"
                             ></div>
                         </div>
                         <span class="lg:hidden">Notifications</span>

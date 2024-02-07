@@ -6,15 +6,15 @@ const props = defineProps<{
 }>();
 
 // computed
-const classes = computed(() => {
+const colorClasses = computed(() => {
     if (props.status === ProductStatus.green) {
-        return 'bg-green-100 text-green-800';
+        return 'bg-stormLightGreen text-stormGreen';
     } else if (props.status === ProductStatus.orange) {
-        return 'bg-orange-100 text-orange-800';
+        return 'bg-stormLightOrange text-stormOrange';
     } else if (props.status === ProductStatus.red) {
-        return 'bg-rose-100 text-rose-800';
+        return 'bg-stormLightRed text-stormRed';
     } else if (props.status === ProductStatus.purple) {
-        return 'bg-indigo-100 text-indigo-800';
+        return 'bg-stormLightPurple text-stormPurple';
     }
 
     return '';
@@ -22,7 +22,11 @@ const classes = computed(() => {
 </script>
 
 <template>
-    <div :class="`${classes} rounded-2xl p-2`">Status</div>
+    <div
+        :class="`${colorClasses} h-[28px] w-[83px] rounded-2xl p-1 text-[12px]`"
+    >
+        Status
+    </div>
 </template>
 
 <style lang="scss"></style>

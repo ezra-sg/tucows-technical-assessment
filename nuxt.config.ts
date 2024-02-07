@@ -2,7 +2,15 @@
 export default defineNuxtConfig({
     devtools: { enabled: true },
     pages: true,
-    modules: ['@nuxt/image', '@nuxtjs/eslint-module'],
+    modules: [
+        '@nuxt/image',
+        [
+            '@nuxtjs/eslint-module',
+            {
+                lintOnStart: false,
+            },
+        ],
+    ],
     components: [
         {
             path: '~/components',

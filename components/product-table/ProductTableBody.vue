@@ -27,33 +27,31 @@ function openModal(product: Product) {
             @keydown.enter="openModal(product)"
         >
             <td
-                class="hidden border-b-[0.5px] border-t-[0.5px] border-slate-300 px-4 py-2 lg:table-cell"
+                class="hidden border-b-[1px] border-stormTableGray px-4 py-2 lg:table-cell"
             >
                 {{ product.id }}
             </td>
             <td
-                class="hidden border-b-[0.5px] border-t-[0.5px] border-slate-300 px-4 py-2 text-center lg:table-cell"
+                class="hidden border-b-[1px] border-stormTableGray px-4 py-2 text-center lg:table-cell"
             >
                 <StatusBadge :status="product.status" />
             </td>
             <td
-                class="hidden border-b-[0.5px] border-t-[0.5px] border-slate-300 px-4 py-2 text-center lg:table-cell"
+                class="hidden border-b-[1px] border-stormTableGray px-4 py-2 text-center lg:table-cell"
             >
                 {{ product.quantity }}
             </td>
-            <td
-                class="border-b-[0.5px] border-t-[0.5px] border-slate-300 px-4 py-2"
-            >
+            <td class="border-b-[1px] border-stormTableGray px-4 py-2">
                 {{ product.product }}
                 <br />
-                <span class="text-gray-500 lg:hidden">
+                <span class="text-stormTextGray lg:hidden">
                     {{ product.serial }} - Qty: {{ product.quantity }}
                 </span>
             </td>
             <td
-                class="hidden border-b-[0.5px] border-l-[2px] border-t-[0.5px] border-slate-300 px-4 py-2 text-right lg:table-cell"
+                class="hidden border-b-[1px] border-l-[2px] border-stormTableGray px-4 py-2 text-right lg:table-cell"
             >
-                {{ product.total }}
+                ${{ product.total }}
             </td>
         </tr>
     </tbody>
