@@ -22,10 +22,7 @@ const classes = computed(() => {
 </script>
 
 <template>
-<div :class="`${classes} rounded-2xl p-2`">
-    Status
-</div>
+    <div :class="`${classes} rounded-2xl p-2`">Status</div>
 </template>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
