@@ -12,6 +12,10 @@ const showNavShadow = ref(false);
 const showMobileMenu = ref(false);
 
 // methods
+function toggleMenu() {
+    showMobileMenu.value = !showMobileMenu.value;
+}
+
 function handleSearch(searchTerm: string) {
     emit('search', searchTerm);
 }
@@ -20,7 +24,7 @@ function handleSearch(searchTerm: string) {
 <template>
     <header
         :class="{
-            'sticky top-0 flex flex-col gap-6 bg-white px-6 pb-2 pt-8 md:gap-10 lg:mb-7 lg:flex-row lg:justify-between lg:px-14 lg:pb-7 lg:pt-14 ': true,
+            'sticky top-0 flex flex-col gap-6 bg-white px-6 pb-2 pt-8 md:gap-10 lg:mb-7 lg:flex-row lg:justify-between lg:px-14 lg:pb-7 lg:pt-14': true,
             'shadow-md': showNavShadow,
         }"
     >
@@ -41,7 +45,7 @@ function handleSearch(searchTerm: string) {
                 height="14"
                 width="18"
                 class="lg:hidden"
-                @click="showMobileMenu = !showMobileMenu"
+                @click="toggleMenu"
             />
         </div>
 

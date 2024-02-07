@@ -11,7 +11,9 @@ function handleSearch(searchTerm: string) {
 </script>
 
 <template>
-    <AppNav @search="handleSearch" />
+    <div>
+        <AppNav @search="handleSearch" />
 
-    <ProductTable :filter="searchModel" />
+        <ProductTable :filter="searchModel" />
+    </div>
 </template>

@@ -20,7 +20,7 @@ watch(product, () => {
         loading.value = true;
         dialogRef.value?.showModal();
     } else {
-        dialogRef.value?.close();
+        closeModal();
     }
 });
 

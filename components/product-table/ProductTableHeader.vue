@@ -5,12 +5,12 @@ const props = defineProps<{
     sortOrder: SortOrder;
 }>();
 
-const emit = defineEmits(['update:sortOrder']);
+const emit = defineEmits(['update:sort-order']);
 
 function invertSort() {
     const { ASC, DESC } = SortOrder;
     const newSortOrder = props.sortOrder === ASC ? DESC : ASC;
-    emit('update:sortOrder', newSortOrder);
+    emit('update:sort-order', newSortOrder);
 }
 </script>
 

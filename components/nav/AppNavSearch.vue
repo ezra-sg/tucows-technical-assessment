@@ -31,7 +31,7 @@ watch(modelValue, () => {
 
 // methods
 function handleSearch() {
-    if (inputHasIllegalChars.value) {
+    if (disableSearchButton.value) {
         return;
     }
 

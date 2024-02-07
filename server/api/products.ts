@@ -1,6 +1,6 @@
 import { ProductStatus } from '~/types/product';
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(() => {
     return {
         products: [
             {

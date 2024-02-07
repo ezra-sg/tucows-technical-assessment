@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Product } from '~/types/product';
 
-const props = defineProps<{
+defineProps<{
     products: Product[];
 }>();
 
@@ -46,9 +46,9 @@ function openModal(product: Product) {
             >
                 {{ product.product }}
                 <br />
-                <span class="text-gray-500 lg:hidden"
-                    >{{ product.serial }} - Qty: {{ product.quantity }}</span
-                >
+                <span class="text-gray-500 lg:hidden">
+                    {{ product.serial }} - Qty: {{ product.quantity }}
+                </span>
             </td>
             <td
                 class="hidden border-b-[0.5px] border-l-[2px] border-t-[0.5px] border-slate-300 px-4 py-2 text-right lg:table-cell"
@@ -58,5 +58,3 @@ function openModal(product: Product) {
         </tr>
     </tbody>
 </template>
-
-<style lang="scss"></style>
