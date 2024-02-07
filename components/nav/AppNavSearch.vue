@@ -12,7 +12,7 @@ const inputClasses = computed(() => {
     const baseClasses =
         'border-stormInputGray border-[1px] rounded-r-md h-12 w-full pl-12 focus:outline-stormPurple';
     const errorClasses =
-        'outline outline-2 outline-stormLightRed focus:stormRed';
+        'outline outline-2 outline-stormRed focus:outline-stormRed';
 
     return inputHasIllegalChars.value
         ? `${baseClasses} ${errorClasses}`
@@ -76,7 +76,7 @@ function handleSearch() {
 <style lang="scss">
 .c-nav-search {
     &__input-error {
-        @apply absolute -bottom-14 bg-stormLightPurple p-2 text-stormPurple shadow-md;
+        @apply absolute -bottom-14 w-[90vw] bg-stormLightPurple p-2 text-stormPurple shadow-md sm:w-auto lg:w-[300px] xl:w-auto;
 
         &::before {
             @apply absolute bg-stormLightPurple shadow-md;

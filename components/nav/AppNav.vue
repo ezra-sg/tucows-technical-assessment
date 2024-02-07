@@ -55,7 +55,7 @@ function handleSearch(searchTerm: string) {
             <div
                 class="flex items-center"
                 :class="{
-                    'fixed left-0 top-24 z-50 flex items-center bg-white p-8 shadow-md backdrop:right-0 md:p-2 lg:static lg:shadow-none': true,
+                    'fixed left-0 right-0 top-24 z-50 flex items-center bg-white p-8 shadow-md backdrop:right-0 lg:static lg:p-2 lg:pl-0 lg:shadow-none': true,
                     'hidden lg:flex': !showMobileMenu,
                 }"
             >
