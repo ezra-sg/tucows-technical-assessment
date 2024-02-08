@@ -34,7 +34,9 @@ function openModal(product: Product) {
             <td
                 class="hidden border-b-[1px] border-stormTableGray px-4 py-2 text-center lg:table-cell"
             >
-                <StatusBadge :status="product.status" />
+                <div class="flex justify-center">
+                    <StatusBadge :status="product.status" />
+                </div>
             </td>
             <td
                 class="hidden border-b-[1px] border-stormTableGray px-4 py-2 text-center lg:table-cell"
