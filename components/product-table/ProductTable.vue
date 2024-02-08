@@ -55,7 +55,7 @@ function handleModalClosed() {
         </div>
 
         <table
-            class="w-full border-separate border-spacing-0 rounded-md border-[1px] border-stormTableGray"
+            class="w-full border-separate border-spacing-0 rounded-md border-l-[1px] border-r-[1px] border-t-[1px] border-stormTableGray"
         >
             <ProductTableHeader
                 :sort-order="sortOrder"
