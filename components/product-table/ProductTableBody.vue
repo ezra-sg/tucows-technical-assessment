@@ -44,8 +44,9 @@ function openModal(product: Product) {
             <td class="border-b-[1px] border-stormTableGray px-4 py-2">
                 {{ product.product }}
                 <br />
-                <span class="text-stormTextGray lg:hidden">
-                    {{ product.serial }} - Qty: {{ product.quantity }}
+                <span class="text-[12px] text-stormTextGray">
+                    {{ product.serial }}
+                    <span class="lg:hidden">- Qty: {{ product.quantity }}</span>
                 </span>
             </td>
             <td
