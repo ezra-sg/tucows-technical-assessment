@@ -28,5 +28,3 @@ const colorClasses = computed(() => {
         Status
     </div>
 </template>
-
-<style lang="scss"></style>
