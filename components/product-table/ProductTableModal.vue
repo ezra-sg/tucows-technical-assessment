@@ -49,9 +49,9 @@ function handleModalScrimClick(event: MouseEvent) {
         >
             <div class="rounded-md bg-white pb-8 pt-4">
                 <div class="mb-8 flex items-center justify-between gap-12">
-                    <span class="pl-8 font-bold">
+                    <h6 class="pl-8 text-[20px] font-bold">
                         {{ product?.product ?? '' }}
-                    </span>
+                    </h6>
 
                     <div
                         role="button"
@@ -84,7 +84,7 @@ function handleModalScrimClick(event: MouseEvent) {
 
                 <div class="flex justify-end pr-8">
                     <button
-                        class="bg-gray-100 rounded-md px-4 py-2 text-sm text-black hover:bg-stormPurple hover:text-white"
+                        class="bg-stormButtonGray h-[44px] w-[88px] rounded-sm px-4 py-2 font-[Inter] text-sm font-[500] text-black hover:bg-stormPurple hover:text-white"
                         @click="closeModal"
                     >
                         Close

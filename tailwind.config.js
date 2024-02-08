@@ -21,6 +21,7 @@ export default {
             stormTableGray: '#E4E4EF',
             stormInputGray: '#DCDFE3',
             stormTextGray: '#808080',
+            stormButtonGray: '#F9F9FB',
             white: '#FFFFFF',
             black: '#000000',
         },
