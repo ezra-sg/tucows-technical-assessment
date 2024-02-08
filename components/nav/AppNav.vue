@@ -75,7 +75,7 @@ function handleSearch(searchTerm: string) {
                                 width="24"
                             />
                             <div
-                                class="bg-red-600 absolute right-0.5 top-0.5 h-2 w-2 rounded"
+                                class="absolute right-[1px] top-[3px] h-[10px] w-[10px] rounded-full border-2 border-white bg-stormRed"
                             ></div>
                         </div>
                         <span class="lg:hidden">Notifications</span>
